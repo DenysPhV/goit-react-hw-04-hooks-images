@@ -17,13 +17,13 @@ export default class Modal extends Component {
 
   handleKeydown = (e) => {
     if (e.code === 'Escape') {
-      this.props.setLargeURL();
+      this.props.onClose();
     }
   };
 
   handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      this.props.setLargeURL();
+      this.props.onClose();
     }
   };
 
@@ -39,5 +39,5 @@ export default class Modal extends Component {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
-  setLargeURL: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
